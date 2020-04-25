@@ -1,0 +1,14 @@
+---
+## /* vim: set tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab autoindent: */
+
+- name: "Verify"
+  hosts: "all"
+  tasks:
+  - name: "Make sure system_name is set"
+    stat:
+      path: "/etc/system_name"
+    register: "result"
+    changed_when: false
+  - name: "Check the install result"
+    assert:
+      that: "result.stat.exists and result.stat.isreg"
