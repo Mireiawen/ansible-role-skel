@@ -16,7 +16,7 @@
   vars:
     filename: "{{ item }}"
     dest: "/etc/skel"
-  with_items:
+  loop:
   - "bashrc"
   - "bash_logout"
   - "profile"
@@ -27,7 +27,7 @@
   vars:
     filename: "{{ item }}"
     dest: "/root"
-  with_items:
+  loop:
   - "bashrc"
   - "bash_logout"
   - "profile"
