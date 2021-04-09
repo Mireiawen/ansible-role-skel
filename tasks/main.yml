@@ -16,19 +16,11 @@
   vars:
     filename: "{{ item }}"
     dest: "/etc/skel"
-  loop:
-  - "bashrc"
-  - "bash_logout"
-  - "profile"
-  - "vimrc"
+  loop: "{{ skel_files }}"
 
 - name: "Configure root"
   include_tasks: "skel-file.yml"
   vars:
     filename: "{{ item }}"
     dest: "/root"
-  loop:
-  - "bashrc"
-  - "bash_logout"
-  - "profile"
-  - "vimrc"
+  loop: "{{ root_skel_files }}"
