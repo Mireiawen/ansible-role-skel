@@ -5,11 +5,17 @@
   template:
     src: "system_name.j2"
     dest: "/etc/system_name"
+    owner: "root"
+    group: "root"
+    mode: "u=rw,go=r"
 
 - name: "Make sure skel exists"
   file:
     name: "/etc/skel"
     state: "directory"
+    owner: "root"
+    group: "root"
+    mode: "u=rwx,go=rx"
 
 - name: "Configure the skel"
   include_tasks: "skel-file.yml"

@@ -5,3 +5,6 @@
   template:
     src: "{{ filename }}.j2"
     dest: "{{ dest | default('/etc/skel') }}/.{{ filename }}"
+    owner: "root"
+    group: "root"
+    mode: "u=rw,go=r"
