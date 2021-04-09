@@ -10,7 +10,7 @@ services:
 
 install:
 # Install dependencies
-- "pip install ansible ansible-lint yamllint molecule docker-py"
+- "pip install ansible ansible-lint yamllint molecule molecule-docker docker-py"
 
 # Make sure the role is found
 - "pushd .."
