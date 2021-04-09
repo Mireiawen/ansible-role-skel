@@ -30,47 +30,11 @@ stages:
 jobs:
   include:
 
-  # Default test: Alpine
+  # Default test
   - stage: "test"
     name: "Alpine"
     script:
     - "molecule test"
-
-  # Test: Arch Linux
-  - stage: "test"
-    name: "Arch"
-    script:
-    - "molecule test --scenario-name arch"
-
-  # Test: CentOS
-  - stage: "test"
-    name: "CentOS"
-    script:
-    - "molecule test --scenario-name centos"
-
-  # Test: Debian
-  - stage: "test"
-    name: "Debian"
-    script:
-    - "molecule test --scenario-name debian"
-
-  # Test: Fedora
-  - stage: "test"
-    name: "Fedora"
-    script:
-    - "molecule test --scenario-name fedora"
-
-  # Test: OpenSUSE
-  - stage: "test"
-    name: "OpenSUSE"
-    script:
-    - "molecule test --scenario-name opensuse"
-
-  # Test: Ubuntu
-  - stage: "test"
-    name: "Ubuntu"
-    script:
-    - "molecule test --scenario-name ubuntu"
 
 notifications:
   webhooks: "https://galaxy.ansible.com/api/v1/notifications/"
