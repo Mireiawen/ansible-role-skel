@@ -1,32 +1,32 @@
 ---
 ## /* vim: set tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab autoindent: */
 
-- name: "Set the system name"
-  template:
-    src: "system_name.j2"
-    dest: "/etc/system_name"
-    owner: "root"
-    group: "root"
-    mode: "u=rw,go=r"
+- name: 'Set the system name'
+  ansible.builtin.template:
+    src: 'system_name.j2'
+    dest: '/etc/system_name'
+    owner: 'root'
+    group: 'root'
+    mode: 'u=rw,go=r'
 
-- name: "Make sure skel exists"
-  file:
-    name: "/etc/skel"
-    state: "directory"
-    owner: "root"
-    group: "root"
-    mode: "u=rwx,go=rx"
+- name: 'Make sure skel exists'
+  ansible.builtin.file:
+    name: '/etc/skel'
+    state: 'directory'
+    owner: 'root'
+    group: 'root'
+    mode: 'u=rwx,go=rx'
 
-- name: "Configure the skel"
-  include_tasks: "skel-file.yml"
+- name: 'Configure the skel'
+  ansible.builtin.include_tasks: 'skel-file.yml'
   vars:
-    filename: "{{ item }}"
-    dest: "/etc/skel"
-  loop: "{{ skel_files }}"
+    filename: '{{ item }}'
+    dest: '/etc/skel'
+  loop: '{{ skel_files }}'
 
-- name: "Configure root"
-  include_tasks: "skel-file.yml"
+- name: 'Configure root'
+  ansible.builtin.include_tasks: 'skel-file.yml'
   vars:
-    filename: "{{ item }}"
-    dest: "/root"
-  loop: "{{ root_skel_files }}"
+    filename: '{{ item }}'
+    dest: '/root'
+  loop: '{{ root_skel_files }}'

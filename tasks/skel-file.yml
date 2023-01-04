@@ -1,10 +1,10 @@
 ---
 ## /* vim: set tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab autoindent: */
 
-- name: "Setting up {{ filename }}"
-  template:
-    src: "{{ filename }}.j2"
-    dest: "{{ dest | default('/etc/skel') }}/.{{ filename }}"
-    owner: "root"
-    group: "root"
-    mode: "u=rw,go=r"
+- name: 'Setting up {{ filename }}'
+  ansible.builtin.template:
+    src: '{{ filename }}.j2'
+    dest: '{{ dest | default("/etc/skel") }}/.{{ filename }}'
+    owner: 'root'
+    group: 'root'
+    mode: 'u=rw,go=r'

@@ -1,0 +1,30 @@
+---
+## /* vim: set tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab autoindent: */
+
+- name: 'Verify'
+  hosts: 'all'
+  tasks:
+  - name: 'Make sure system_name is set'
+    ansible.builtin.stat:
+      path: '/etc/system_name'
+    register: 'system_name'
+    changed_when: false
+  - name: 'Make sure .bashrc is copied to skel'
+    ansible.builtin.stat:
+      path: '/etc/skel/.bashrc'
+    register: 'skel_bashrc'
+    changed_when: false
+  - name: 'Make sure .vimrc is copied to root'
+    ansible.builtin.stat:
+      path: '/root/.vimrc'
+    register: 'root_vimrc'
+    changed_when: false
+  - name: 'Check the result'
+    ansible.builtin.assert:
+      that:
+      - 'root_vimrc.stat.exists'
+      - 'root_vimrc.stat.isreg'
+      - 'system_name.stat.exists'
+      - 'system_name.stat.isreg'
+      - 'skel_bashrc.stat.exists'
+      - 'skel_bashrc.stat.isreg'
