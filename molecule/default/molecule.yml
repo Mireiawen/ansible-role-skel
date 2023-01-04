@@ -30,14 +30,3 @@ provisioner:
 
 verifier:
   name: 'ansible'
-
-scenario:
-  test_sequence:
-  - 'lint'
-  - 'destroy'
-  - 'syntax'
-  - 'create'
-  - 'converge'
-  - 'idempotence'
-  - 'verify'
-  - 'destroy'
