@@ -2,7 +2,7 @@
 ## /* vim: set tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab autoindent: */
 - name: 'Converge'
   hosts: 'all'
-  tasks:
-  - name: 'Include mireiawen.skel'
-    ansible.builtin.include_role:
-      name: 'mireiawen.skel'
+  become: true
+
+  roles:
+  - role: 'mireiawen.skel'
