@@ -1,4 +1,4 @@
-![Build Status](https://img.shields.io/gitlab/pipeline-status/mireiawenrose/ansible-roles/skel?branch=master&style=plastic) [![Ansible Galaxy](https://img.shields.io/badge/Ansible%20Galaxy-mireiawen.skel-blueviolet?style=plastic)](https://galaxy.ansible.com/mireiawen/locales)
+![Build Status](https://img.shields.io/gitlab/pipeline-status/mireiawenrose/ansible-roles/skel?branch=master&style=plastic) [![Ansible Galaxy](https://img.shields.io/badge/Ansible%20Galaxy-mireiawen.skel-blueviolet?style=plastic)](https://galaxy.ansible.com/mireiawen/skel)
 
 # Skel
 Install customized bash init scripts and other dotfiles to `/etc/skel` and `/root`
